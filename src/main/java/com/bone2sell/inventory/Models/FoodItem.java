@@ -1,5 +1,8 @@
 package com.bone2sell.inventory.Models;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class FoodItem implements Inventory{
     private int id;
     private String name;
@@ -26,8 +29,6 @@ public class FoodItem implements Inventory{
     public void setName(String name) {
         this.name = name;
     }
-
-
 
     public void setPrice(long price) {
         this.price = price;

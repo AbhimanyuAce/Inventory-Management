@@ -1,5 +1,8 @@
 package com.bone2sell.inventory.Models;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class ClothItem implements Inventory{
     private int id;
     private String name;

@@ -2,13 +2,13 @@ package com.bone2sell.inventory.Service;
 
 import com.bone2sell.inventory.Models.ClothItem;
 import com.bone2sell.inventory.Models.FoodItem;
-import com.bone2sell.inventory.Models.Inventory;
 import com.bone2sell.inventory.Repository.ClothItemRepository;
 import com.bone2sell.inventory.Repository.FoodItemRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public class InventoryService {
 
         private final FoodItemRepository foodRepo;
