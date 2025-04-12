@@ -1,7 +1,7 @@
 package com.bone2sell.inventory.Controller;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 public class InventoryController {
@@ -11,4 +11,8 @@ public class InventoryController {
         return "Hello user";
     }
 
+    @PostMapping
+    public List<String> addFoodTtem(@RequestBody FoodItem food_item) {
+        return food_item.
+    }
 }
