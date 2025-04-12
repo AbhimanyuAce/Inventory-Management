@@ -14,21 +14,26 @@ public class InventoryController {
 
     private InventoryService iser;
     @Autowired
-    public void InventoryController(InventoryService iser){
+    public InventoryController(InventoryService iser){
         this.iser = iser;
     }
 
-    @GetMapping("/hello")
-    public String sayHello(){
-        return "Hello user";
+    @GetMapping("/food")
+    public List<FoodItem> sayHello(){
+        return iser.getAllFoodItems();
     }
 
-    @PostMapping
-    public String addFoodTtem(@RequestBody FoodItem food) {
+    @GetMapping("/cloth")
+    public List<ClothItem> getcloths(){
+        return iser.getAllClothItems();
+    }
+
+    @PostMapping("/addFood")
+    public FoodItem addFoodTtem(@RequestBody FoodItem food) {
         return iser.addFoodItem(food);
     }
-    @PostMapping
-    public String addCloth(@RequestBody ClothItem food) {
-        return iser.addClothItem();
+    @PostMapping("/addCloth")
+    public ClothItem addCloth(@RequestBody ClothItem cloth) {
+        return iser.addClothItem(cloth);
     }
 }
