@@ -1,12 +1,20 @@
 package com.bone2sell.inventory.Models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class FoodItem implements Inventory{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private long price;
+
+    public FoodItem() {
+    }
 
     public FoodItem(int id, String name, long price) {
         this.id = id;
@@ -36,6 +44,6 @@ public class FoodItem implements Inventory{
 
     @Override
     public long getPrice() {
-        return 0;
+        return price;
     }
 }
